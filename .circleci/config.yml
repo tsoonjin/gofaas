@@ -11,6 +11,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Vercel CLI
+          command: yarn add -D vercel
+      - run:
           name: Deploy to Vercel
           command: ./node_modules/.bin/vercel --token $VERCEL_TOKEN --confirm ./
 
